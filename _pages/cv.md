@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-Please download my CV [here](https://maggiezhangdata.github.io/files/MZ_academic_CV.pdf). 
+Please download my CV [here](https://mz44zhang.github.io/files/MZ_academic_CV.pdf). 
 
 
 Education
@@ -15,9 +15,13 @@ Education
 * B.A. in Journalism, Tsinghua University, 2018
 * M.Phil. in Communication, Chinese University of Hong Kong, 2020
 * Ph.D in Communication, University of Illinois Urbana Champaign, 2025 (expected)
+* Master of Computer Science, University of Illinois Urbana Champaign, 2024 (expected)
 
 Work experience
 ======
+* Fall 2023 - Spring 2024: Statistics, Data, and Survey Research Consultant
+  * Center for Innovation in Teaching and Learning (CITL), University of Illinois Urbana Champaign
+    
 * Spring 2023: Instructor 
   * Department of Advertising, University of Illinois Urbana Champaign
   * JOUR 480: Social Media Analytics 
