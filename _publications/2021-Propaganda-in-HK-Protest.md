@@ -5,10 +5,10 @@ permalink: /publication/2021-Propaganda-in-HK-Protest
 excerpt: 'Drawing upon the approach of strategic framing, this study investigated how China’s state-run media mobilize foreign propaganda machine and use specific patterns to describe the 2019 Hong Kong protests on Twitter.'
 date: 2021-10-01
 venue: 'Social Science Computer Review'
-# paperurl: 'http://maggiezhangdata.github.io/files/2021_SSCR_STM_China_Propaganda_HK.pdf'
+# paperurl: 'http://mz44zhang.github.io/files/2021_SSCR_STM_China_Propaganda_HK.pdf'
 citation: 'Zhang, M. M., Wang, X., & Hu, Y. (2021). Strategic Framing Matters But Varies: A Structural Topic Modeling Approach to Analyzing China’s Foreign Propaganda About the 2019 Hong Kong Protests on Twitter. Social Science Computer Review, 08944393211042575.'
 ---
-[Download paper here](http://maggiezhangdata.github.io/files/2021_SSCR_STM_China_Propaganda_HK.pdf)
+[Download paper here](http://mz44zhang.github.io/files/2021_SSCR_STM_China_Propaganda_HK.pdf)
 
 
 Abstract 
