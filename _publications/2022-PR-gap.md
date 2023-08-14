@@ -5,11 +5,11 @@ permalink: /publication/2022-PR-gap
 excerpt: 'This study adopted topic modeling as an inductive analytical approach to examine a comprehensive set of texts representing the perspective of scholars and practitioners over a 10-year period from 2011 to 2020.'
 date: 2022-10-01
 venue: 'Journal of Marketing Communications'
-# paperurl: 'http://mz44zhang.github.io/files/2022_gapinPR.pdf'
+# paperurl: 'http://mz44zhang.github.io/files/papers/2022_gapinPR.pdf'
 citation: 'Wang, X., & Zhang, M. M. (2022). Sharing the same bed with different dreams: Topic modeling the research-practice gap in public relations 2011-2020. Journal of Marketing Communications, 1-25.'
 ---
 
-[Download paper here](http://mz44zhang.github.io/files/2022_gapinPR.pdf)
+[Download paper here](http://mz44zhang.github.io/files/papers/2022_gapinPR.pdf)
 
 
 Abstract
