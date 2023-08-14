@@ -1,5 +1,5 @@
 ---
-title: "# TrendingNow: How Twitter Trends Impact Social and Personal Agendas?"
+title: "#TrendingNow: How Twitter Trends Impact Social and Personal Agendas?"
 collection: publications
 permalink: /publication/2023-Twitter-Trends
 excerpt: 'Do Twitter trending lists influence individuals’ social and personal agendas? This study examines the extent to which Twitter trends shape individuals’ perceptions of social reality.'
