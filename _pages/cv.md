@@ -7,34 +7,32 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+Please download my CV [here](https://maggiezhangdata.github.io/files/MZ_academic_CV.pdf). 
+
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.A. in Journalism, Tsinghua University, 2018
+* M.Phil. in Communication, Chinese University of Hong Kong, 2020
+* Ph.D in Communication, University of Illinois Urbana Champaign, 2025 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Spring 2023: Instructor 
+  * Department of Advertising, University of Illinois Urbana Champaign
+  * JOUR 480: Social Media Analytics 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
+* Spring 2021 - Fall 2022: Teaching Assistant
+  * Department of Journalism, University of Illinois Urbana Champaign
+  * JOUR 460: Data Storytelling
+  * JOUR 425: Multimedia Editing and Design 
+
+Teaching
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+  <ul>{% for post in site.teaching %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>  
+
 
 Publications
 ======
@@ -42,18 +40,23 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* 2022/2023: ICR representative in College of Media Academic Misconduct and Capricious Grading Committee at University of Illinois at Urbana-Champaign
+
+
+Skills
+======
+* Text mining
+* Computational methods
+* Machine learning
+* Computer vision 
+* Network analysis 
