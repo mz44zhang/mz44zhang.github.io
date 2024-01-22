@@ -1,0 +1,396 @@
+---
+title: 'R: The basics'
+author: "Maggie Zhang - University of Illinois Urbana Champaign"
+output:
+  html_document:
+    df_print: paged
+---
+# Introduction
+This is a brief introduction to R for programming. 
+
+The first step to use R is to set the working directory. Your working directory is the folder on your computer in which you are currently working. When you ask R to open a file, it will look in the working directory for this file, and when you tell R to save a data file or figure, it will save it in the working directory.
+
+```{r}
+# setwd("/R Review") # set a working directory
+```
+
+I will recommend using the **Project** option when opening RStudio. You can either **create a new project** or c**onnect a project with a pre-existing folder**. Then you will be working in the project under the specified folder. 
+
+R can do many statistical and data analyses. They are organized in so-called packages or libraries.
+With the standard installation, most common packages are installed.
+
+```{r}
+#install.packages(dplyr)
+library(dplyr)
+# help(library = "dplyr)
+```
+
+A very useful function provided by dplyr package is the %>% pipe function. It can pass the value on the LHS to the function in the RHS 
+
+```{r}
+print("apple")
+"apple" %>% print()
+```
+
+# 1. Basic Intro
+
+## 1.1. Input/Output
+How to import data from text, csv files into R?
+```{r}
+#data = read.csv(file="https://drmaggiezhang.com/files/inclass_data.csv",stringsAsFactors=F)
+#write.csv(data,file="new_data.csv")
+```
+If encountering new file types, Google it. The basic idea is the same.
+
+### 1.1.0 RData 
+
+Unique to R: save & load .RData files. 
+
+1. using the **Environment** in RStudio 
+2. using the following code
+
+
+```{r}
+# save(data,x,file="test.RData") # we can save multiple objects in one .RData file 
+# load("test.RData")
+# rm(x) # remove 
+```
+
+
+## 1.2. Basic syntax
+Do some basic calculations. 
+```{r}
+1+2
+1-2
+1*2
+1/2
+sqrt(2) # squared root of 2
+2^2 # 2 squared
+```
+
+We can define a variable and assign a value to it.
+
+```{r}
+height = 180 # instead of using the equation symbol, it is equivalent to use the arrow symbol.
+weight = 50
+print (height*weight)
+```
+
+or alternatively, we assign the result to a new variable
+
+```{r}
+nv = height*weight
+nv # instead of print(nv)
+```
+
+R has some generic functions that we can use them directly. For example, calculating the sum and mean of a series of numbers.
+
+```{r}
+sum(c(1,2,3))
+mean(c(1,2,3))
+```
+
+If you don't know how to use a function, you can use the help() function and check the examples. For example
+```{r}
+help(sum) # or equivalently
+?sum
+```
+
+# 2. Data types
+There are 3 general modes of data in R: string/characters, numbers, and logical.
+
+```{r}
+string = "I am xxx"
+string
+
+# use class or typeof to determine the type of a variable
+class(string)
+typeof(string)
+
+number = 5
+number
+
+```
+
+Another important data type is the logical type. There are two predefined variables:TRUE and FALSE
+
+```{r}
+logic = TRUE
+logic
+missing = NA
+missing
+```
+
+We can also change the data type manually.
+
+```{r}
+t = '2'
+typeof(t) # character
+
+t1 = as.numeric(t)
+typeof(t1) # number
+
+t2 = as.character(t1)
+typeof(t2) # character again
+```
+
+
+# 3. Data structures
+To learn any programming languages, a shortcut is to learn the core elements. Fortunately, most programming languages share very similar core elements. They are data structure, conditional expressions, loops, and functions. 
+
+Four types of data structure are commonly used in R: **vector**, matrix, **data frame**, and list. The first is vector. Vector is a list of values. These values could be numeric, logic, or string.
+
+We will focus more on the vector and data frame since they are more commonly used in social media analytics. 
+
+## 3.1 Vector
+
+### 3.1.1 Creating a vector 
+
+```{r}
+# using c (c is a function) to generate a new vector
+v = c(1,7,9,10) 
+v
+```
+
+The data type of vector values must be the same. If numbers,characters,and missing value are assigned together, what will happen? 
+
+```{r}
+v2 = c(1,7,NA,"hi")
+v2
+```
+
+R will force every element in the vector to be a string/character type in the case. 
+
+### 3.1.2 Accessing elements in the vector 
+
+R uses a 1-index system, meaning the 1st index refers to the 1st element, which is different from Python. 
+We can access the n-th element in a vector by:
+
+```{r}
+v[2]
+```
+
+We can also know the total number of elements in a vector by using length().
+```{r}
+length(v)
+```
+
+However, unlike Python, reverse indexing is not that convenient in R. To access the last element in a vector, you can use the following code. 
+
+```{r}
+v[length(v)]
+```
+There is another specific function to reverse a vector.
+
+```{r}
+rev(v)
+```
+
+Therefore you can also use the following code to access the last element in R:
+
+```{r}
+rev(v)[1]
+```
+
+The length() function is to count the number of items instead of character length. To know the character length, we have the nchar() function. 
+
+```{r}
+nchar("apple")
+```
+
+We can also access multiple elements of a vector at the same time.
+
+```{r}
+v[c(1,3)] # accessing the 1st and 3rd element in v
+v[c(1:3)] # accessing the first three elements in v
+```
+
+Note we can also access the rest vector by excluding certain items.
+
+```{r}
+v[-2] # excluding the 2nd item 
+```
+
+We can also give names to vector elements
+
+```{r}
+# vector elements can have names
+names(v)
+# assign names
+names(v) = c("First","Second","Third","Fourth")
+names(v)
+```
+
+We can apply mathematical calculations directly to vector. We can multiply a vector by a number, calculate the sqrt of each elements in the vector.
+
+```{r}
+v*2
+sqrt(v)
+```
+
+We can also use min, max, mean to summarize the vector
+```{r}
+min(v)
+max(v)
+mean(v)
+sum(v)
+```
+
+
+
+We can use the table() function to get the frequency table of items in a vector. 
+
+```{r}
+table(v)
+```
+
+## 3.1.3 List manipulation 
+Adding elements into an existing vector is simple.
+
+```{r}
+v1 = c(1,2,3)
+c(v1,4) # adding 4 into v1
+```
+
+We can also add a new vector to an existing vector using the same method. 
+
+```{r}
+v2 = c(10,20)
+c(v1,v2) # appedning v2 to v1
+```
+
+
+
+## 3.2 Matrix 
+
+The second structure is matrix. Matrix is a collection of vectors, organized in rows and columns. Values in a matrix should be in the same data type. Each column or row is a vector. We use the matrix function to generate a matrix with 5 cols and 5 rows. Values are integers from 1 to 25.
+
+```{r}
+m = matrix(1:25,5,5) 
+```
+Similar to vector, we could do simple maths.
+```{r}
+m+2
+m+m
+m%*%m # matrix nultiplication
+```
+We can combine two matrices by cols or rows.
+```{r}
+cbind(m,m) 
+rbind(m,m)
+# access a matrix element
+m[2,3] = "hi"
+```
+
+## 3.3 Data frame 
+A data frame is a matrix, while columns could be of all different data types. 
+
+### 3.3.1 Creating a data frame 
+
+From vectors:
+```{r}
+v1=c(1,7,6,3,2)
+v2=c(T,F,T,F,T)
+v3=c("Y","N","Y","N","Y")
+d = data.frame(v1,v2,v3,stringsAsFactors=F) # create use data.frame
+```
+
+From csv files:
+```{r}
+df = df = read.csv("https://drmaggiezhang.com/files/inclass_data.csv",stringsAsFactors = F)
+```
+
+The stringAsFactors = F argument is to make sure the text content is treated as string instead of factors. 
+
+### 3.3.2 Accessing columns and rows in a data frame 
+Columns in a data frame can be access using a $ sign. 
+```{r}
+d$v1
+```
+We can also select rows that satisfy certain conditions. For example, accessing rows with v2 == T
+
+```{r}
+d[d$v2 == T,]
+```
+
+Combing row selection & vector summarization, we can select the row with the biggest v1 value:
+```{r}
+d[d$v1 == max(d$v1),]
+```
+We can also select certain columns as well.
+
+```{r}
+d[d$v1 == max(d$v1),c('v1','v3')]
+```
+Adding a new column to a data frame is also straightforward. 
+
+```{r}
+d$new_v = "new"
+d$new_v2 = c(1,2,3,4,5)
+```
+
+
+## 3.4 List
+A list is a collection of all data structure.
+```{r}
+l = list(v,m,d)
+names(l)
+l[[3]]
+```
+
+# 4. Programming tools
+I will introduce 3 programming tools: if...else expression (which is one of the conditional expressions), for and while loop expressions, and user defined functions.
+
+## 4.1 if ... else ...
+Task: input a number, if the value is larger than or equal to 100, print "High Value", if the value is less than 100 and larger than or equal to 50, print "Middle Value", if less than 50, print "Low Value".
+
+```{r}
+x = 95 
+if (x>=100){
+  print("High Value")
+} else if (x>=50&x<100){
+  print("Middle Value")
+} else {
+  print("Low Value")
+}
+```
+
+## 4.2 Iteration
+Task: calculate the number of characters in our names. We use nchar() for each name.That means we will use the nchar() function many times.
+
+```{r}
+names=c("Maggie","Abby","Jack","Mike")
+for (name in names) {
+  N = nchar(name)
+  print (paste(name,":",N,"characters"))
+}
+```
+or alternatively, loop over the index of the vector:
+```{r}
+for (i in 1:4) {
+  N = nchar(names[i])
+  print (paste(names[i],":",N,"characters"))
+}
+```
+or use while instead of loop
+
+```{r}
+i=1
+while (i<=4){
+  N = nchar(names[i])
+  print (paste(names[i],":",N,"characters"))
+  i=i+1 #counter
+}
+```
+
+## 4.3 Functions 
+
+You can write your own functions and use them in the same way as the generic functions. For example, you can write a function to calculate the area of a square. The formula is area = width*height.
+
+```{r}
+area = function(height=5,width=20){
+  area = height*width
+  return (area)
+}
+area(11,10)
+```

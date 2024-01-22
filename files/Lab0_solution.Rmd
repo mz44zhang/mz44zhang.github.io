@@ -1,0 +1,230 @@
+---
+title: "Lab 0 solutions"
+author: "Maggie Zhang"
+date: "2023-01-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1: Vector manipulation
+
+For this section, you will be working on the following vector 
+
+```{r}
+L = c(3, 1, 1.3, 2, '2', c(2,8), TRUE, FALSE, FALSE, TRUE, 2, 3, 3, 9,2, "banana", "tree", 'bee', 'this is a long string')
+```
+
+### Q1. 
+Write the code to show the data type of the 6th element in the vector L (Note: R uses the 1-based index).
+
+```{r}
+typeof(L[6])
+```
+
+Notice how R forced every element to be character type. 
+
+### Q2. 
+What is the data type of the 4th (2) and 5th element ('2') in the vector L respectively? 
+
+```{r}
+typeof(L[4])
+```
+
+```{r}
+typeof(L[5])
+```
+
+
+### Q3. 
+Find the total number of elements in the vector L. 
+
+```{r}
+length(L)
+```
+
+Notice how R will flatten everything. The 6th item, originally was a vector, but when put into the vector L as an element, it is forced to be flat and the 2 elements in it were released out. 
+
+### Q4. 
+Find the length (number of characters) of the last element in the vector L. 
+
+```{r}
+nchar(L[length(L)])
+```
+In R, there is no direct reverse indexing like the L[-1] in Python. But we can access the last element throught L[length(L)]. 
+
+```{r}
+L[-1]
+```
+Also notice the meaning of L[-1] in R: it will remove (-) the first element in the vector and return the rest. 
+
+
+### Q5. 
+Use vector slicing to access the 4 boolean values in the vector L. 
+
+```{r}
+L[c(8:11)]
+```
+
+
+### Q6. 
+Print the vector in reverse order without changing it. 
+
+```{r}
+rev(L)
+```
+
+
+### Q7. 
+Write code to calculate the sum of the first three numbers in the vector L. 
+
+```{r}
+sum(as.numeric(L[c(1:3)]))
+```
+First select the first three numbers by L[c(1:3)]. Then turn them into numbers by the as.numeric() function. Do the sum(). 
+
+### Q8. 
+Write code to count the frequency of 3 in the vector L. 
+
+```{r}
+table(L)
+```
+table() function in R can get the frequency table of items in the vector. 
+
+### Q9. 
+Add the following 2 elements to the vector L: “illini”, “spring”. 
+
+```{r}
+c(L,c("illini","spring"))
+```
+
+
+### Q10. 
+Change the last element in the vector L to “this is a short string”.
+
+```{r}
+L[length(L)] = "this is a short string"
+```
+
+
+## Section 2: Data Frame 
+
+In the following session, we will deal with a data frame. You can access the CSV file in the following link: https://drmaggiezhang.com/files/ElonMuskTweets.csv
+
+This file contains all tweets posted by Elon Musk in the past 2 years from Jan/01/2021 to Jan/01/2023. I did the data collection using Twitter API. By the end of 1st module, you will also be able to do it as well. 
+
+### Q11. 
+Read in the CSV file into a data frame format. How many rows and columns of this data frame?
+
+```{r}
+df = read.csv("https://drmaggiezhang.com/files/ElonMuskTweets.csv",stringsAsFactors = F)
+```
+
+The stringAsFactors argument is to make sure when reading csv files, the strings won't be treated as a factor. 
+ 
+### Q12. 
+Find the most liked tweet with the maximum like_count. What is the id of that tweet?
+
+```{r}
+df[df$like_count == max(df$like_count),]
+```
+
+
+### Q13. 
+What is the average retweet number of Elon Musk’s tweets?
+
+```{r}
+mean(df$retweet_count)
+```
+
+
+### Q14. 
+What is the total length of tweet text?
+
+```{r}
+sum(nchar(df$text))
+```
+
+
+### Q15. 
+Write a function that takes in 3 parameters as input: retweet_count, reply_count, and like_count. Calculate their average as the output. Name the function as CalculateEngagement 
+
+```{r}
+CalculateEngagement = function(retweet_count, reply_count, like_count){
+  avg = (retweet_count + reply_count + like_count)/3
+  return(avg)
+}
+```
+
+
+### Q16. 
+Using the CalculateEngagement functions you just wrote, create a new column in the data frame called engagement_index.
+
+```{r}
+df$engagement_index = CalculateEngagement(df$retweet_count, df$reply_count, df$like_count)
+```
+
+
+### Q17. 
+Write another function that takes in 2 parameters: retweet_count, and reply_count. Calculate the reply-to-retweet ratio as the output (reply_count/retweet_count). Name the function as CalculateRatio.
+
+```{r}
+CalculateRatio = function(retweet_count, reply_count){
+  ratio = reply_count/retweet_count
+  return(ratio)
+}
+```
+
+
+### Q18. 
+Similarly, using the CalculateRatio functions you just wrote, create a new column in the data frame called ratio. Note: there are some tweets whose retweet_count is 0. Therefore you need to write a conditional statement. If the retweet_count is 0, set the ratio to 0. 
+
+```{r}
+ratio = c()
+for (i in c(1:nrow(df))) {
+  if (df$retweet_count[i] != 0){
+    r = CalculateRatio(df$retweet_count[i], df$reply_count[i])
+  }else{
+    r = 0
+  }
+  ratio = c(ratio,r)
+}
+```
+
+```{r}
+df$ratio = ratio
+```
+
+
+
+### Q19. 
+Get the full vector of all hashtags that appeared in Elon Musk’s tweets. (Note: you might need to combine the for loop and conditional statement, as well as the vector combination. The logic goes as follows: create an empty vector (named all_hashtags) to store all hashtags. For each item in the ElonMuskTweets[‘hashtags’], if it is empty, it means there is a vector of hashtags in that tweet. Append this vector to the all_hashtags vector you created. Use pandas.isna() to see if an element is empty). 
+
+
+
+```{r}
+all_hashtags = c()
+
+for (hashtag in df$hashtags) {
+  if (nchar(hashtag) != 0){
+    all_hashtags = c(all_hashtags,hashtag)
+  }
+}
+```
+
+```{r}
+all_hashtags
+```
+
+
+### Q20. 
+Save the current data frame (with 2 additional columns) as a new CSV file. Upload it to Canvas. 
+
+```{r}
+write.csv(df,"results.csv")
+```
+
+
+

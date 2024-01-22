@@ -1,0 +1,199 @@
+---
+title: "Lab 0 questions"
+date: "2023-01-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1: Vector manipulation
+
+For this section, you will be working on the following vector 
+
+```{r}
+L = c(3, 1, 1.3, 2, '2', c(2,8), TRUE, FALSE, FALSE, TRUE, 2, 3, 3, 9,2, "banana", "tree", 'bee', 'this is a long string')
+```
+
+### Q1. 
+Write the code to show the **data type** of the **6th element** in the vector L (Note: R uses the 1-based index).
+
+```{r}
+
+```
+
+
+### Q2. 
+What is the **data type** of the 4th (`2`) and 5th element (`'2'`) in the vector L respectively? 
+
+```{r}
+
+```
+
+
+
+### Q3. 
+Find the **total number of elements** in the vector L. 
+
+```{r}
+
+```
+
+
+### Q4. 
+Find the **length (number of characters)** of the **last element** in the vector L. 
+
+```{r}
+
+```
+
+
+
+### Q5. 
+Use vector slicing to access the **4 boolean values** in the vector L. 
+
+```{r}
+
+```
+
+
+### Q6. 
+Print the vector in **reverse order** without changing it. 
+
+```{r}
+
+```
+
+
+### Q7. 
+Write code to calculate the **sum of the first three numbers** in the vector L. 
+
+```{r}
+
+```
+
+### Q8. 
+Write code to count **the frequency of 3** in the vector L. 
+
+```{r}
+
+```
+
+
+### Q9. 
+Add the following 2 elements to the vector L: `“illini”, “spring”`. 
+
+```{r}
+
+```
+
+
+### Q10. 
+Change the **last element** in the vector L to `“this is a short string”`.
+
+```{r}
+
+```
+
+
+## Section 2: Data Frame 
+
+In the following session, we will deal with a data frame. You can access the CSV file in the following link: https://drmaggiezhang.com/files/ElonMuskTweets.csv
+
+This file contains all tweets posted by Elon Musk in the past 2 years from Jan/01/2021 to Jan/01/2023. I did the data collection using Twitter API. By the end of 1st module, you will also be able to do it in just a few minutes. 
+
+### Q11. 
+Read in the CSV file into a `data frame` format. How many **rows and columns** of this data frame?
+
+```{r}
+
+```
+
+
+ 
+### Q12. 
+Find the most liked tweet with the **maximum** `like_count`. What is the **id** of that tweet?
+
+```{r}
+
+```
+
+
+### Q13. 
+What is the **average** `retweet_count` of Elon Musk’s tweets?
+
+```{r}
+
+```
+
+
+### Q14. 
+What is the total **length** of tweet `text`?
+
+```{r}
+
+```
+
+
+### Q15. 
+Write a function that takes in 3 parameters as input: `retweet_count`, `reply_count`, and `like_count`. Calculate their **average** as the output. Name the function as **`CalculateEngagement`** 
+
+```{r}
+
+```
+
+
+### Q16. 
+Using the **`CalculateEngagement`** functions you just wrote, create a new column in the data frame called **engagement_index**.
+
+```{r}
+
+```
+
+
+### Q17. 
+Write another function that takes in 2 parameters: `retweet_count`, and `reply_count`. Calculate the reply-to-retweet ratio as the output (`reply_count/retweet_count`). Name the function as **`CalculateRatio`**.
+
+```{r}
+
+```
+
+
+### Q18. 
+Similarly, using the **CalculateRatio** functions you just wrote, create a new column in the data frame called `ratio`. 
+
+**Note**: there are some tweets whose `retweet_count` is 0. Therefore you need to write a **conditional statement**. If the `retweet_count` is 0, set the `ratio` to 0. 
+
+```{r}
+
+```
+
+
+### Q19. 
+Get the full vector of **all hashtags** that appeared in Elon Musk’s tweets. 
+
+Note: you might need to combine the **for loop** and **conditional statement**, as well as the **vector combination**. 
+
+The logic goes as follows: 
+1. create an empty vector (named `all_hashtags`) to store all hashtags. 
+2. For each item in the `ElonMuskTweets[‘hashtags’]`, if it is not empty, it means there is a vector of hashtags in that tweet. 
+3.Append this vector to the `all_hashtags` vector you created. 
+4.Use `nchar() == 0` to see if an element is empty. Similarly use `nchar() != 0` to detect non empty element. 
+
+
+```{r}
+
+```
+
+
+
+### Q20. 
+Save the current data frame (with 2 additional columns) as a new CSV file. Upload it to Canvas. 
+
+```{r}
+
+```
+
+
+
