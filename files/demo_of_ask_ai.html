@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Video Page</title>
+    <style>
+        body {
+            text-align: center; /* Center align the content of the body, including the title */
+            margin: 0; /* Remove default margin */
+        }
+        h1 {
+            margin: 0.5em 0; /* Add some vertical margin to the title */
+        }
+        video {
+            width: 100%; /* Set video width to 100% of the browser width */
+            height: auto; /* Set video height to auto to maintain aspect ratio */
+        }
+    </style>
+    <title>Video Demo of Ask AI</title>
 </head>
 <body>
 
     <h1>Demo of the ask AI feature in the Twitter Mockup platform</h1>
-    <p>This is just to demostrate the pipeline of the feature. It is using the GPT API in the backend. We can implement more complicated or more research-oriented features just by changing the prompts.</p>
+    <p>This is just to demonstrate the pipeline of the feature. It is using the GPT API in the backend. We can implement more complicated or more research-oriented features just by changing the prompts.</p>
 
-    <video width="560" height="315" controls>
+    <video controls>
         <source src="demo_of_ask_AI.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
 
 </body>
