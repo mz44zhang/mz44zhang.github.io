@@ -39,4 +39,5 @@ Education Background
 ====================
 
 I am concurrently a Master's student in Computer Science in the department of computer science and a Ph.D. candidate in communication at UIUC.
+
 Prior to joining UIUC, I received my M.Phil degree in Communication from [School of Journalism and Communication](http://www.com.cuhk.edu.hk/en-GB/) at the Chinese University of Hong Kong where I was supervised by [Prof. Hai Liang](https://drhailiang.com/) and B.A. degree in [Journalism](https://www.tsjc.tsinghua.edu.cn/en/) from Tsinghua University in China.
