@@ -16,4 +16,5 @@ This study investigates the impact of YouTube’s 2021 policy, which hides disli
 Keywords
 --------
 
-AI, CASA, Chatbot, LLM, Social Bot, Social Media
+Social cues, YouTube, User engagement, Opinion expression, Social
+influence bias, Herding behavior
