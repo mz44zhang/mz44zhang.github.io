@@ -19,13 +19,13 @@ My previous projects investigate how social media platform features influence us
 
 # Teaching Experience
 
-I independently designed and developed the course "ADV 480: Social Media Analytics" for graduate and undergraduate students at the University of Illinois Urbana-Champaign, Department of Advertising, in 2023. I teach students how to use Python and R to collect social media data and analyze it using text mining and social network analysis techniques.
+I independently designed and developed the course [ADV 480: Social Media Analytics](https://mz44zhang.github.io/teaching/) for graduate and undergraduate students at the University of Illinois Urbana-Champaign, Department of Advertising, in 2023. I teach students how to use Python and R to collect social media data and analyze it using text mining and social network analysis techniques.
 
 # Professional Experience
 
 I am currently working as a data science and statistics consultant at the Center for Innovation in Teaching & Learning, where I provide consultation services on finding and preparing data for analysis, as well as survey construction and experiment implementation. 
 
-Additionally, I am a full-stack engineer leading a team to develop (1) a fully functional social media platform similar to Twitter using React and Google Firebase, (2) a Chrome extension that provides AI assistance for content creation on social media platforms like Twitter and LinkedIn, and (3) a chatbot web app. I have experience working with AWS, Google Firebase, and JavaScript.
+Additionally, I am a full-stack engineer leading a team to develop (1) a fully functional social media platform similar to Twitter using React and Google Firebase ([link to the platform](https://twitter-clone-ai.vercel.app/)), (2) a Chrome extension that provides AI assistance for content creation on social media platforms like Twitter and LinkedIn (see a [demo here](https://social-media-ai-extension.vercel.app/welcome.html)) and (3) a chatbot web app. I have experience working with AWS, Google Firebase, and JavaScript.
 
 I am well-versed in conducting experiments using Qualtrics and have extensive experience in machine learning and text mining.
 
