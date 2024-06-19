@@ -35,8 +35,6 @@ I have received top student paper awards from the International Communication As
 
 My work have been published in peer-reviewed journals including _International Journal of Communication, Social Science Computer Review, and Journal of Marketing Communications._
 
-I have also received top student paper awards from the International Communication Association. as well as Top Paper Award,Association for Education in Journalism and Mass Communication, Communication Technology Division
-
 Education Background
 ====================
 
