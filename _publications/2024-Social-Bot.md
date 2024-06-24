@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2024-Social-Bot
 excerpt: 'Do social bots have socializing value? We investigate this phenomenon using data from the launch of CommentRobot on a microblogging platform.'
 date: 2024/2/26
-venue: 'SSRN'
+venue: 'R & R at IInformation Systems Research'
 # paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4786302'
 citation: 'Gao, Yang and Zhang, Maggie and Lysyakov, Mikhail, Is Social Bot Socializing? Evidence from a Microblogging Platform (April 6, 2024). Available at SSRN: https://ssrn.com/abstract=4786302'
 ---
